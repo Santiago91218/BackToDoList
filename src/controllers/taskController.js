@@ -2,7 +2,6 @@ const Task = require("../models/task.model");
 const Sprint = require("../models/sprint.model");
 const Backlog = require("../models/backlog.model");
 
-// Obtener todas las tareas
 const getAllTasks = async (req, res) => {
   try {
     const tasks = await Task.find();
@@ -14,7 +13,6 @@ const getAllTasks = async (req, res) => {
   }
 };
 
-// Obtener tarea por ID
 const getTaskById = async (req, res) => {
   try {
     const idTask = parseInt(req.params.id);
@@ -32,7 +30,6 @@ const getTaskById = async (req, res) => {
   }
 };
 
-// Crear una tarea
 const createTask = async (req, res) => {
   try {
     const { titulo, descripcion, fechaLimite } = req.body;
@@ -62,7 +59,6 @@ const createTask = async (req, res) => {
   }
 };
 
-// Actualizar una tarea
 const updateTask = async (req, res) => {
   try {
     const idTask = parseInt(req.params.id);
@@ -84,7 +80,6 @@ const updateTask = async (req, res) => {
   }
 };
 
-//Cambiar el estado de una tarea
 const updateStateTask = async (req, res) => {
   try {
     const idTask = parseInt(req.params.id);
@@ -114,7 +109,6 @@ const updateStateTask = async (req, res) => {
   }
 };
 
-// Eliminar una tarea
 const deleteTask = async (req, res) => {
   try {
     const idTask = parseInt(req.params.id);
